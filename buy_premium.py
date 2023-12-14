@@ -2,7 +2,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceRepl
 from pyrogram import Client, filters
 
 @Client.on_message(filters.command('buy_premium'))
-async def buy_premium(_, message):
+async def buy_premium(client, message):
     text = """ENGLISH 👇👇👇
 
 🎖️ PREMIUM MEMBERSHIP 🎖️
