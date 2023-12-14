@@ -41,6 +41,7 @@ reqst_channel = environ.get('REQST_CHANNEL_ID', '')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
+USERNAME =  environ.get('USERNAME', 'https://t.me/user_is_leo')
 
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "")
