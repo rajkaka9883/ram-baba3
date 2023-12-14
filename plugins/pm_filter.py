@@ -1343,7 +1343,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('✨ Mᴏᴠɪᴇ Gʀᴏᴜᴘ ✨', url="https://t.me/movies_hub_official1")
                 ],[
                     InlineKeyboardButton('👻 Hᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('👾 Aʙᴏᴜᴛ', callback_data='about') 
+                    InlineKeyboardButton('👾 Aʙᴏᴜᴛ', callback_data='about')
+                ],[
+            InlineKeyboardButton('💰 Buy Premium for adz Free Movies ✅', callback_data='buy_premium')  
                   ]]       
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
