@@ -481,5 +481,9 @@ Would you like to become a Prime Member? Follow these steps:-
 Any doubts or how to become a prime member? contact me @KUSHALHK @TG_Bots_Supporter</code></b>"""
 
 
+    PREMIUM_TXT = """
+ADD YOUR PLAN IN script.py file"""
+
+
 
   
