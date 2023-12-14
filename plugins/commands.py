@@ -8,7 +8,7 @@ from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import *
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id, get_bad_files
 from database.users_chats_db import db
-from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, CHNL_LNK, GRP_LNK, REQST_CHANNEL, SUPPORT_CHAT_ID, SUPPORT_CHAT, MAX_B_TN, VERIFY, SHORTLINK_API, SHORTLINK_URL, TUTORIAL, IS_TUTORIAL, PREMIUM_USER
+from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, CHNL_LNK, GRP_LNK, REQST_CHANNEL, SUPPORT_CHAT_ID, SUPPORT_CHAT, MAX_B_TN, VERIFY, SHORTLINK_API, SHORTLINK_URL, TUTORIAL, IS_TUTORIAL, PREMIUM_USER, USERNAME
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp, verify_user, check_token, check_verification, get_token, get_shortlink, get_tutorial
 from database.connections_mdb import active_connection
 # from plugins.pm_filter import ENABLE_SHORTLINK
@@ -27,6 +27,8 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('✪ Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url="https://t.me/TG_SUPPORT_GROUP"),
                     InlineKeyboardButton('⌬ Mᴏᴠɪᴇ Gʀᴏᴜᴘ', url="https://t.me/movies_hub_official1")
+                ],[
+            InlineKeyboardButton('💰 Buy Premium for adz Free Movies ✅', callback_data='buy_premium') 
                 ],[
                     InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
                   ]]
@@ -50,6 +52,8 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('👻 Hᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('👾 Aʙᴏᴜᴛ', callback_data='about')
+                ],[
+            InlineKeyboardButton('💰 Buy Premium for adz Free Movies ✅', callback_data='buy_premium') 
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_text("👀")
@@ -64,6 +68,19 @@ async def start(client, message):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+        return
+
+    if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help", "buy_premium"]:
+        if message.command[1] == "buy_premium":
+            btn = [[
+                InlineKeyboardButton('💸 ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ 💸', url=USERNAME)
+            ],[
+                InlineKeyboardButton('🗑 ᴄᴀɴᴄᴇʟ ᴘʀᴇᴍɪᴜᴍ 🗑', callback_data='close_data')
+            ]]            
+            await message.reply_text(
+                text=script.PREMIUM_TXT.format(message.from_user.mention),
+                reply_markup=InlineKeyboardMarkup(btn),
+            )
         return
     
     if AUTH_CHANNEL and not await is_subscribed(client, message):
@@ -102,6 +119,8 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('👻 Hᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('👾 Aʙᴏᴜᴛ', callback_data='about')
+                ],[
+            InlineKeyboardButton('💰 Buy Premium for adz Free Movies ✅', callback_data='buy_premium') 
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(
