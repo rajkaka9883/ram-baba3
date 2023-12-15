@@ -2,7 +2,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceRepl
 from pyrogram import Client, filters
 
 @Client.on_message(filters.command('myplan'))
-async def buy_premium(_, message):
+async def myplan(_, message):
     text = """<b>ʜᴀʏ Ram.., 👋
 
 ʏᴏᴜ ᴅᴏ ɴᴏᴛ ʜᴀᴠᴇ ᴀɴʏ ᴀᴄᴛɪᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ, ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴛᴀᴋᴇ ᴘʀᴇᴍɪᴜᴍ ᴛʜᴇɴ
@@ -10,7 +10,7 @@ async def buy_premium(_, message):
     
 
 @Client.on_message(filters.command('myplan'))
-async def buy_premium(_, message):
+async def myplan(_, message):
     text = """<b>ʜᴀʏ Ram.., 👋
 
 ʏᴏᴜ ᴅᴏ ɴᴏᴛ ʜᴀᴠᴇ ᴀɴʏ ᴀᴄᴛɪᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ, ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴛᴀᴋᴇ ᴘʀᴇᴍɪᴜᴍ ᴛʜᴇɴ
