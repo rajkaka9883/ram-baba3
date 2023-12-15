@@ -7,7 +7,12 @@ async def myplane(_, message):
 
 ʏᴏᴜ ᴅᴏ ɴᴏᴛ ʜᴀᴠᴇ ᴀɴʏ ᴀᴄᴛɪᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ, ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴛᴀᴋᴇ ᴘʀᴇᴍɪᴜᴍ ᴛʜᴇɴ
 ᴄʟɪᴄᴋ ᴏɴ /upgrade ᴛᴏ ᴋɴᴏᴡ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴘʟᴀɴ</b>"""
-    await update.message.edit(text=text)
+    keyboard = InlineKeyboardMarkup([[  
+        InlineKeyboardButton("🫰 Buy Premium 💸", url="https://t.me/leotgadmin_bot")],  
+        [InlineKeyboardButton("Cancel Premium", callback_data="close_data")]])
+    await update.message.edit(text=text, reply_markup=keyboard)
+
+
 
    
 
@@ -16,6 +21,11 @@ async def myplane(_, message):
     text = f"""<b>ʜᴀʏ {message.from_user.mention}.., 👋
 
 ʏᴏᴜ ᴅᴏ ɴᴏᴛ ʜᴀᴠᴇ ᴀɴʏ ᴀᴄᴛɪᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ, ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴛᴀᴋᴇ ᴘʀᴇᴍɪᴜᴍ ᴛʜᴇɴ
-ᴄʟɪᴄᴋ ᴏɴ /upgrade ᴛᴏ ᴋɴᴏᴡ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴘʟᴀɴ</b>"""   
-    await update.message.edit(text=text)
+ᴄʟɪᴄᴋ ᴏɴ /upgrade ᴛᴏ ᴋɴᴏᴡ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴘʟᴀɴ</b>"""
+    keyboard = InlineKeyboardMarkup([[  
+        InlineKeyboardButton("🫰 Buy Premium 💸", url="https://t.me/leotgadmin_bot")],  
+        [InlineKeyboardButton("Cancel Premium", callback_data="close_data")]])
+    await update.message.edit(text=text, reply_markup=keyboard)
+
+   
 
