@@ -70,7 +70,7 @@ async def start(client, message):
         )
         return
 
-    if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help", "buy_premium"]:
+    if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help", "buy_premium", "myplan"]:
         if message.command[1] == "buy_premium":
             btn = [[
                 InlineKeyboardButton('💸 ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ 💸', url=USERNAME)
