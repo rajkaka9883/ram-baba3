@@ -13,10 +13,7 @@ async def myplan(_, message):
     await update.message.edit(text=text, reply_markup=keyboard)
 
 
-
-   
-
-@Client.on_message(filters.private & filters.command(["myplan"]))
+@Client.on_message(filters.command('myplan'))
 async def myplan(_, message):
     text = f"""<b>ʜᴀʏ {message.from_user.mention}.., 👋
 
@@ -25,7 +22,4 @@ async def myplan(_, message):
     keyboard = InlineKeyboardMarkup([[  
         InlineKeyboardButton("🫰 Buy Premium 💸", url="https://t.me/leotgadmin_bot")],  
         [InlineKeyboardButton("Cancel Premium", callback_data="close_data")]])
-    await update.message.edit(text=text, reply_markup=keyboard)
-
-   
-
+    await message.reply_text(text=text, reply_markup=keyboard)
